@@ -1294,7 +1294,7 @@ class InAppWebViewController {
     }
     args.putIfAbsent('source', () => source);
     var data = await _channel.invokeMethod('evaluateJavascript', args);
-    if (data != null && Platform.isAndroid) data = json.decode(data);
+    if (data != null && data != '' && Platform.isAndroid) data = json.decode(data);
     return data;
   }
 
